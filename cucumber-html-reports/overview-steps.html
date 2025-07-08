@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Bershka regresi&oacute;n web</td>
+      <td>08 Jul 2025, 13:46</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.hooks.DriverSanityHook.checkDriverIsPresent()</td>
+              <td>11</td>
+              <td class="duration" data-value="515363">0.000</td>
+              <td class="duration" data-value="515363">0.002</td>
+              <td class="duration" data-value="5669000">0.005</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.hooks.SauceLabsIntegrationHook.appendTestLink(io.cucumber.java.Scenario)</td>
+              <td>11</td>
+              <td class="duration" data-value="13727">0.000</td>
+              <td class="duration" data-value="13727">0.000</td>
+              <td class="duration" data-value="151000">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.hooks.SauceLabsIntegrationHook.setTestName(io.cucumber.java.Scenario)</td>
+              <td>11</td>
+              <td class="duration" data-value="134909">0.000</td>
+              <td class="duration" data-value="134909">0.000</td>
+              <td class="duration" data-value="1484000">0.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.hooks.SauceLabsIntegrationHook.setTestStatus(io.cucumber.java.Scenario)</td>
+              <td>11</td>
+              <td class="duration" data-value="18090">0.000</td>
+              <td class="duration" data-value="18090">0.000</td>
+              <td class="duration" data-value="199000">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.hooks.WebHooks.goToBaseUrl(io.cucumber.java.Scenario)</td>
+              <td>11</td>
+              <td class="duration" data-value="25461120090">25.461</td>
+              <td class="duration" data-value="25461120090">26.877</td>
+              <td class="duration" data-value="280072321000">4:40.072</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.hooks.WebHooks.maximizeBrowser()</td>
+              <td>11</td>
+              <td class="duration" data-value="32754545">0.032</td>
+              <td class="duration" data-value="32754545">0.061</td>
+              <td class="duration" data-value="360300000">0.360</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.shared.catalog.CatalogWhens.theUserAddsAProductToFavouritesFromTheGrid()</td>
+              <td>1</td>
+              <td class="duration" data-value="13418817000">13.418</td>
+              <td class="duration" data-value="13418817000">13.418</td>
+              <td class="duration" data-value="13418817000">13.418</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.shared.catalog.CatalogWhens.theUserAddsAProductToTheShoppingCart()</td>
+              <td>2</td>
+              <td class="duration" data-value="50000">0.000</td>
+              <td class="duration" data-value="50000">0.000</td>
+              <td class="duration" data-value="100000">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.shared.catalog.CatalogWhens.theUserAddsTheSameProductToTheShoppingCartWithDifferentSize(com.globetesting.model.ProductCardField)</td>
+              <td>2</td>
+              <td class="duration" data-value="17000">0.000</td>
+              <td class="duration" data-value="17000">0.000</td>
+              <td class="duration" data-value="34000">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.shared.catalog.CatalogWhens.theUserScrollAcrossTheCategoryProducts()</td>
+              <td>1</td>
+              <td class="duration" data-value="9034137000">9.034</td>
+              <td class="duration" data-value="9034137000">9.034</td>
+              <td class="duration" data-value="9034137000">9.034</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.shared.catalog.CatalogWhens.theUserSelectsACustomProduct()</td>
+              <td>1</td>
+              <td class="duration" data-value="14925661000">14.925</td>
+              <td class="duration" data-value="14925661000">14.925</td>
+              <td class="duration" data-value="14925661000">14.925</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.shared.catalog.CatalogWhens.theUserSelectsAProductFromTheSearchResults()</td>
+              <td>1</td>
+              <td class="duration" data-value="19760460000">19.760</td>
+              <td class="duration" data-value="19760460000">19.760</td>
+              <td class="duration" data-value="19760460000">19.760</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.shared.common.CommonGivens.aCategoryPage()</td>
+              <td>4</td>
+              <td class="duration" data-value="5247320000">5.247</td>
+              <td class="duration" data-value="5247320000">5.612</td>
+              <td class="duration" data-value="20989280000">20.989</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.shared.common.CommonGivens.aCategoryPageWithAProductWithMultipleSizesAndColours()</td>
+              <td>2</td>
+              <td class="duration" data-value="24999053500">24.999</td>
+              <td class="duration" data-value="24999053500">25.259</td>
+              <td class="duration" data-value="49998107000">49.998</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.shared.common.CommonGivens.aGuestUser()</td>
+              <td>8</td>
+              <td class="duration" data-value="570500">0.000</td>
+              <td class="duration" data-value="570500">0.001</td>
+              <td class="duration" data-value="4564000">0.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.shared.common.CommonGivens.aNotloggedInUser()</td>
+              <td>1</td>
+              <td class="duration" data-value="291527000">0.291</td>
+              <td class="duration" data-value="291527000">0.291</td>
+              <td class="duration" data-value="291527000">0.291</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.shared.common.CommonGivens.aUserWithItemsOnTheShoppingCart(com.globetesting.model.UserStatus,int)</td>
+              <td>2</td>
+              <td class="duration" data-value="35800506000">35.800</td>
+              <td class="duration" data-value="35800506000">41.346</td>
+              <td class="duration" data-value="71601012000">1:11.601</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.shared.common.CommonThens.beforeScenario(io.cucumber.java.Scenario)</td>
+              <td>11</td>
+              <td class="duration" data-value="7507909">0.007</td>
+              <td class="duration" data-value="7507909">0.031</td>
+              <td class="duration" data-value="82587000">0.082</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.shared.common.CommonThens.validateEventFromYaml(java.lang.String)</td>
+              <td>10</td>
+              <td class="duration" data-value="574184900">0.574</td>
+              <td class="duration" data-value="574184900">3.109</td>
+              <td class="duration" data-value="5741849000">5.741</td>
+              <td class="failed">60.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.cucumber.glue.shared.customlab360.Customlab360Whens.theUserGoesToCustomizationSection()</td>
+              <td>1</td>
+              <td class="duration" data-value="5285890000">5.285</td>
+              <td class="duration" data-value="5285890000">5.285</td>
+              <td class="duration" data-value="5285890000">5.285</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.fw.cucumber.hooks.FailedLogHook.afterScenario(io.cucumber.java.Scenario)</td>
+              <td>11</td>
+              <td class="duration" data-value="189272">0.000</td>
+              <td class="duration" data-value="189272">0.000</td>
+              <td class="duration" data-value="2082000">0.002</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.globetesting.fw.cucumber.hooks.ScreenshotHook.addGlobalEvidences(io.cucumber.java.Scenario)</td>
+              <td>11</td>
+              <td class="duration" data-value="30818">0.000</td>
+              <td class="duration" data-value="30818">0.000</td>
+              <td class="duration" data-value="339000">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>22</td>
+            <td>135</td>
+            <td class="duration">3.641</td>
+            <td class="duration">4:40.072</td>
+            <td class="duration">8:11.576</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
